@@ -1,13 +1,14 @@
 #!/usr/bin/python3
 import sys
 
+"""Represent factories."""
 def factorize(number):
-    """Factorize a number into a product of two smaller numbers."""
     for divisor in range(2, number):
         if number % divisor == 0:
             return (divisor, number // divisor)
     return None
 
+"""Define main."""
 def main(filename):
     try:
         with open(filename, 'r') as file:
@@ -22,6 +23,7 @@ def main(filename):
     except ValueError:
         print("Invalid input. Make sure the file contains valid natural numbers greater than 1.")
 
+        
 if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("Usage: factors <file>")
